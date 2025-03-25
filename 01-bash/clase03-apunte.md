@@ -66,6 +66,7 @@ Entonces ahora si al ejecutar el script, tengo un prompt que me pide nombre y me
 
 ## Estructura de control if else
 
+```
 if [ condicion ]; then
     lo que hace
 elif [ condicion ]; then
@@ -73,6 +74,7 @@ elif [ condicion ]; then
 else
     lo que hace
 fi
+```
 
 ## Argumentos
 
@@ -81,6 +83,7 @@ Se introducen así ./mi-script chelo
 Y se guardan así
 HOLA=$1
 
+```
 if [ $HOLA == "chelo" ]; then
     echo "Hola chelooo, aguante river"
 elif [ $HOLA == "nico" ]; then
@@ -88,6 +91,7 @@ elif [ $HOLA == "nico" ]; then
 else
     echo "Aguante el river todo el tiempo"
 fi
+```
 
 *SON IMPORTANTES LOS ESPACIOS DENTRO DE LOS CORCHETES, SINO NO SE EJECUTA
 
@@ -117,9 +121,33 @@ Cadenas:
 
 ## Validar argumentos vacíos
 
+```
 if [ -z "$1" ]; then
     echo "che, me mandaste argumentos"
     exit 1
 fi
+```
 
 Recordamos que -z verifica si la cadena tiene longitud de 0, al tener longitud de 0, el if toma como true la condición y ejecuta el codigo
+
+## Iteración for
+
+```
+for((i=1; i <= $LIMITE; i++))
+do
+    SUMATOTAL=$((SUMATOTAL + i))
+done
+```
+
+## Arrays
+
+```
+MI_VECTOR=("manu" "nico" "juan" "pedro")
+
+echo "el primer elemento es: ${MI_VECTOR[0]}"
+
+echo "todos mis elementos son: ${MI_VECTOR[@]}"
+
+echo "este arreglo tiene ${#MI_VECTOR[@]} elementos"
+```
+
